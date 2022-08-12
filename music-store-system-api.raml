@@ -2,18 +2,9 @@
 types:
   Category:
     description: Product category
-      Artist:
-    description: Product artist
-    properties:
-      id?:
-        example: 1
-        type: number
-        format: long
-      name:
-        description: Artist name
-        example: Metallica
-        type: string
-        minLength: 1
+    type: !include
+
+      
   Product:
     description: Main resource type
     type: !include data-types/product.raml
