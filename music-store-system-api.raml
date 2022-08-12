@@ -86,8 +86,8 @@ traits:
   /search/{query}:
     get:
       is: [ paginated, sorted ]
-      displayName: GET products by artist name
-      description: Retrieves all products for a given artist
+      displayName: GET products by provided query
+      description: Retrieves products scontaining product name field
       responses:
         200:
           body:
