@@ -52,18 +52,16 @@ types:
         type: string
       active?:
         description: Denotes if product is available, 0 not available, 1 available
-        default: 1
-        example: 1
-        type: number
-        maximum: 1
-        format: int
+        example: true
+        type: boolean
       image_url?:
         description: Product image
         default: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
         type: string
-      newProperty:
-        example: Example
-        type: string
+      unit_price:
+        example: 1
+        type: number
+        format: int
 title: Music Store System API
 description: Music Store System API sole purpose is to fetch data from DB and/or store data in DB.
 mediaType:
