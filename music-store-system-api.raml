@@ -83,3 +83,14 @@ traits:
             application/json:
               type: Product[]
               examples: !include examples/response-products.raml
+  /search/{query}:
+    get:
+      is: [ paginated, sorted ]
+      displayName: GET products by artist name
+      description: Retrieves all products for a given artist
+      responses:
+        200:
+          body:
+            application/json:
+              type: Product[]
+              examples: !include examples/response-products.raml
