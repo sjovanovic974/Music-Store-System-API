@@ -19,8 +19,13 @@ types:
     description: Main resource type
     type: !include data-types/product.raml
 
+traits:
+  paginated: !include traits/pageable.raml
+  sorted: !include traits/sortable.raml
+
 /products:
   get:
+    is: [ paginated, sorted ]
     displayName: GET all products
     description: Retrieves all products from database
     responses:
