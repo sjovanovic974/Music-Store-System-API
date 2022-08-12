@@ -1,58 +1,45 @@
 #%RAML 1.0 NamedExample
 response-product:
 
-
-  id?:
-    example: 1
-    type: number
-    format: long
-  sku?:
-    description: Storage keeping unit, created internally by process API
-    example: CD-000001
-    type: string
-    minLength: 9
-    maxLength: 11
-  name:
-    description: Product name
-    example: Master of Puppets
-    type: string
-    minLength: 1
-  description?:
-    description: Product description
-    example: Seminal album form early 80's
-    type: string
-  active?:
-    description: Denotes if product is available in the store
-    default: true
-    example: true
-    type: boolean
-  image_url?:
-    description: Product image
-    default: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
-    example: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
-    type: string
-  unit_price:
-    example: 15.99
-    type: number
-    minimum: 1
-    format: double
-  units_in_stock:
-    default: 1
-    example: 12
-    type: number
-    minimum: 1
-    format: int
-  date_created:
-    example: 2022-08-12T09:16:43.000Z
-    type: datetime
-    format: rfc3339
-  last_updated:
-    example: 2022-08-12T09:17:59.161Z
-    type: datetime
-    format: rfc3339
-  artist:
-    description: Product's artist
-    type: Artist
-  category:
-    description: Product's category
-    type: Category
+id: 1
+sku: CD-000001
+name: Master of Puppets
+description?:
+  description: Product description
+  example: Seminal album form early 80's
+  type: string
+active?:
+  description: Denotes if product is available in the store
+  default: true
+  example: true
+  type: boolean
+image_url?:
+  description: Product image
+  default: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
+  example: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
+  type: string
+unit_price:
+  example: 15.99
+  type: number
+  minimum: 1
+  format: double
+units_in_stock:
+  default: 1
+  example: 12
+  type: number
+  minimum: 1
+  format: int
+date_created:
+  example: 2022-08-12T09:16:43.000Z
+  type: datetime
+  format: rfc3339
+last_updated:
+  example: 2022-08-12T09:17:59.161Z
+  type: datetime
+  format: rfc3339
+artist:
+  description: Product's artist
+  type: Artist
+category:
+  description: Product's category
+  type: Category
