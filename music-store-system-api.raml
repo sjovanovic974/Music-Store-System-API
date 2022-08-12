@@ -101,7 +101,10 @@ traits:
       description: Retrieves products between given price range
       queryParameters:
         start:
-          type: str
+          type: number
+          default: 0
+          minimum: 0
+          
       responses:
         200:
           body:
