@@ -99,6 +99,9 @@ traits:
       is: [ paginated, sorted ]
       displayName: GET products between given price range
       description: Retrieves products between given price range
+      queryParameters:
+        start:
+          type: str
       responses:
         200:
           body:
