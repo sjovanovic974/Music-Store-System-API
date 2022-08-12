@@ -102,14 +102,16 @@ traits:
       queryParameters:
         start:
           type: number
-          default: 0
-          minimum: 0
+          format: double
+          default: 0.00
+          minimum: 0.
           example: 10
         end:
           type: number
-          default: 10000
-          maximum: 10000
-          example: 10  
+          format: double
+          default: 1000.00
+          maximum: 10000.00
+          example: 30.00
       responses:
         200:
           body:
