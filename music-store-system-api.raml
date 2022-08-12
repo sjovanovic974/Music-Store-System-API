@@ -18,12 +18,13 @@ types:
   Product:
     description: Main resource type
     type: !include data-types/product.raml
+
 /products:
   get:
     displayName: GET all products
     description: Retrieves all products from database
     responses:
-      "200":
+      200:
         body:
-          items:
+          application/json:
             type: Product
