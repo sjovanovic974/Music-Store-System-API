@@ -1,5 +1,33 @@
 #%RAML 1.0
 types:
+  Category:
+    description: Product category
+    properties:
+      id?:
+        example: 1
+        type: number
+        format: long
+      name:
+        description: Category name
+        enum:
+          - CD
+          - LP
+          - DVD
+          - BOOK
+        example: CD
+        type: string
+  Artist:
+    description: Product artist
+    properties:
+      id?:
+        example: 1
+        type: number
+        format: long
+      name:
+        description: Artist name
+        example: Metallica
+        type: string
+        minLength: 1
   Product:
     description: Main resource type
     properties:
@@ -33,34 +61,9 @@ types:
         description: Product image
         default: https://community.mp3tag.de/uploads/default/original/2X/a/acf3edeb055e7b77114f9e393d1edeeda37e50c9.png
         type: string
-  Category:
-    description: Product category
-    properties:
-      id?:
-        example: 1
-        type: number
-        format: long
-      name:
-        description: Category name
-        enum:
-          - CD
-          - LP
-          - DVD
-          - BOOK
-        example: CD
+      newProperty:
+        example: Example
         type: string
-  Artist:
-    description: Product artist
-    properties:
-      id?:
-        example: 1
-        type: number
-        format: long
-      name:
-        description: Artist name
-        example: Metallica
-        type: string
-        minLength: 1
 title: Music Store System API
 description: Music Store System API sole purpose is to fetch data from DB and/or store data in DB.
 mediaType:
