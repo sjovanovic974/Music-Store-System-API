@@ -50,9 +50,9 @@ traits:
               example:
                 message: "Product not found!"
   /category:
-    is: [ paginated, sorted ]
     /{id}:
       get:
+        is: [ paginated, sorted]
         displayName: GET products by category id
         description: Retrieves all products from a given category
         responses:
