@@ -2,21 +2,7 @@
 types:
   Category:
     description: Product category
-    properties:
-      id?:
-        example: 1
-        type: number
-        format: long
-      name:
-        description: Category name
-        enum:
-          - CD
-          - LP
-          - DVD
-          - BOOK
-        example: CD
-        type: string
-  Artist:
+      Artist:
     description: Product artist
     properties:
       id?:
@@ -31,7 +17,7 @@ types:
   Product:
     description: Main resource type
     type: !include data-types/product.raml
-    
+
 title: Music Store System API
 description: Music Store System API sole purpose is to fetch data from DB and/or store data in DB.
 mediaType:
