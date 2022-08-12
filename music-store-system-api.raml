@@ -1,21 +1,23 @@
 #%RAML 1.0
-types:
-  Category:
-    description: Product category
-    type: !include data-types/category.raml
-  Artist:
-    description: Product artist
-  Product:
-    description: Main resource type
-    type: !include data-types/product.raml
-
 title: Music Store System API
+
 description: Music Store System API sole purpose is to fetch data from DB and/or store data in DB.
 mediaType:
   - application/json
 version: v1
 protocols:
   - HTTP
+
+types:
+  Category:
+    description: Product category
+    type: !include data-types/category.raml
+  Artist:
+    description: Product artist
+    type: !include data-types/artist.raml
+  Product:
+    description: Main resource type
+    type: !include data-types/product.raml
 /products:
   get:
     displayName: GET all products
