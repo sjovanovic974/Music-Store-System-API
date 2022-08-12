@@ -32,5 +32,11 @@ types:
   /{id}:
     get:
       displayName: GET a single product
-      description: Retrieves a single product 
+      description: Retrieves a single product from database
+      responses:
+        200:
+          body:
+            application/json:
+              type: Product
+              examples: !in
 
