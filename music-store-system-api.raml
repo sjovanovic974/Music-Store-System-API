@@ -52,6 +52,19 @@ traits:
             application/json:
               example:
                 message: "Product not found!"
+    put:
+      displayName: PUT a product to database
+      description: Updates a product in the database
+      body:
+        application/json:
+          type: PostProductDTO
+          examples: !include examples/post-product.raml
+      responses:
+        200:
+          body:
+            application/json:
+              examples: !include examples/response-product.raml
+  delete:
   /category:
     /{id}:
       get:
@@ -133,17 +146,5 @@ traits:
         body:
           application/json:
             examples: !include examples/response-product.raml
-  put:
-    displayName: PUT a product to database
-    description: Updates a product in the database
-    body:
-      application/json:
-        type: PostProductDTO
-        examples: !include examples/post-product.raml
-    responses:
-      200:
-        body:
-          application/json:
-            examples: !include examples/response-product.raml
-  delete:
+  
     
