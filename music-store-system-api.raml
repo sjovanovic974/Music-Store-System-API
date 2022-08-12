@@ -94,3 +94,14 @@ traits:
             application/json:
               type: Product[]
               examples: !include examples/response-products.raml
+  /range:
+    get:
+      is: [ paginated, sorted ]
+      displayName: GET products between given price range
+      description: Retrieves products containing search query in their respective product name field
+      responses:
+        200:
+          body:
+            application/json:
+              type: Product[]
+              examples: !include examples/response-products.raml
