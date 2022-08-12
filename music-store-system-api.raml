@@ -29,5 +29,8 @@ types:
           application/json:
             type: Product[]
             examples: !include examples/response-products.raml
-    
+  /{id}:
+    get:
+      displayName: GET a single product
+      description: Retrieves a single product 
 
