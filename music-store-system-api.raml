@@ -50,6 +50,7 @@ traits:
               example:
                 message: "Product not found!"
   /category:
+    is: [ paginated, sorted ]
     /{id}:
       get:
         displayName: GET products by category id
@@ -71,6 +72,7 @@ traits:
                 type: Product[]
                 examples: !include examples/response-products.raml
   /artist/{name}:
+    is: [ paginated, sorted ]
     get:
       displayName: GET products by artist name
       description: Retrieves all products for a given artist
