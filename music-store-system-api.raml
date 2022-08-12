@@ -49,24 +49,25 @@ traits:
             application/json:
               example:
                 message: "Product not found!"
-  /category/{id}:
-    get:
-      displayName: GET products by category id
-      description: Retrieves all products from a given category
-      responses:
-        200:
-          body:
-            application/json:
-              type: Product[]
-              examples: !include examples/response-products.raml
-  /category/{name}:
-    get:
-      displayName: GET products by category name
-      description: Retrieves all products from a given category
-      responses:
-        200:
-          body:
-            application/json:
-              type: Product[]
-              examples: !include examples/response-products.raml
+  /category:
+    /{id}:
+      get:
+        displayName: GET products by category id
+        description: Retrieves all products from a given category
+        responses:
+          200:
+            body:
+              application/json:
+                type: Product[]
+                examples: !include examples/response-products.raml
+    /{name}:
+      get:
+        displayName: GET products by category name
+        description: Retrieves all products from a given category
+        responses:
+          200:
+            body:
+              application/json:
+                type: Product[]
+                examples: !include examples/response-products.raml
 
