@@ -64,15 +64,15 @@ traits:
           body:
             application/json:
               examples: !include examples/response-product.raml
-  delete:
-    displayName: DELETE a product
-    description: Removes a product from the database
-    responses:
-      200:
-        body:
-          application/json:
-            examples:
-              message: Product deleted
+    delete:
+      displayName: DELETE a product
+      description: Removes a product from the database
+      responses:
+        200:
+          body:
+            application/json:
+              examples:
+                message: Product deleted
   /category:
     /{id}:
       get:
