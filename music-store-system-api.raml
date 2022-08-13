@@ -220,12 +220,12 @@ traits:
   get:
     is: [ paginated ]
     displayName: GET all categories
-    description: Retrieves all artists from the database
+    description: Retrieves all categories from the database
     responses:
       200:
         body:
           application/json:
-            type: Artist[]
+            type: Category[]
             examples: !include examples/response-artists.raml
   post:
     displayName: SAVE an artist
