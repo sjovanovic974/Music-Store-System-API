@@ -158,5 +158,11 @@ traits:
   get:
     displayName: GET all artists
     description: Retrieves all artists from the database
+    responses:
+      200:
+        body:
+          application/json:
+            type: Artist[]
+            examples: !include 
 /categories:
     
