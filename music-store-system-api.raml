@@ -169,5 +169,16 @@ traits:
     get:
       displayName: GET a single artist
       description: Retrieves a single artist from the database
+      responses:
+        200:
+          body:
+            application/json:
+              type: Artist
+              examples: !include examples/response-product.raml
+        404:
+          body:
+            application/json:
+              example:
+                message: "Product not found!"
 /categories:
     
