@@ -168,10 +168,18 @@ traits:
           application/json:
             type: Artist[]
             examples: !include examples/response-artists.raml
-  save:
+  post:
     displayName: SAVE an artist
     description: Saves an artist to the database
-    
+    body:
+      application/json:
+        type: ArtistDTO
+        examples: !include examples/post-.raml
+    responses:
+      201:
+        body:
+          application/json:
+            examples: !include examples/response-product.raml
   /{id}:
     get:
       displayName: GET a single artist
