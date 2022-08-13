@@ -12,6 +12,9 @@ types:
   Category:
     description: Product category
     type: !include data-types/category.raml
+  ArtistDTO:
+    description: DTO to be used with POST and PUT methods
+    type: !include data-types/post-artist-dto.raml
   Artist:
     description: Product artist
     type: !include data-types/artist.raml
@@ -226,10 +229,10 @@ traits:
         body:
           application/json:
             type: Category[]
-            examples: !include examples/response-categories.raml.raml
+            examples: !include examples/response-categories.raml
   post:
-    displayName: SAVE an artist
-    description: Saves an artist to the database
+    displayName: SAVE a category
+    description: Saves a category to the database
     body:
       application/json:
         type: ArtistDTO
