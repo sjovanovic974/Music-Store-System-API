@@ -15,6 +15,9 @@ types:
   Artist:
     description: Product artist
     type: !include data-types/artist.raml
+  ArtistDTO:
+    description: DTO to be used with POST and PUT methods
+    type: !include data-types/post-artist-dto.raml
   Product:
     description: Main resource type
     type: !include data-types/product.raml
@@ -180,5 +183,26 @@ traits:
             application/json:
               example:
                 message: "Artist not found!"
+    put:
+      displayName: PUT an artist to database
+      description: Updates an artist in the database
+      body:
+        application/json:
+          type: Artist
+          examples: !include examples/post-product.raml
+      responses:
+        200:
+          body:
+            application/json:
+              examples: !include examples/response-product.raml
+    delete:
+      displayName: DELETE a product
+      description: Removes a product from the database
+      responses:
+        200:
+          body:
+            application/json:
+              examples:
+                message: Product deleted
 /categories:
     
