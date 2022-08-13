@@ -156,6 +156,7 @@ traits:
             examples: !include examples/response-product.raml
 /artists:
   get:
+    is: [ paginated, sorted ]
     displayName: GET all artists
     description: Retrieves all artists from the database
     responses:
