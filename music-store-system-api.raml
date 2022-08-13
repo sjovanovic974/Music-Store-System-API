@@ -174,11 +174,11 @@ traits:
           body:
             application/json:
               type: Artist
-              examples: !include examples/response-product.raml
+              examples: !include examples/response-artist.raml
         404:
           body:
             application/json:
               example:
-                message: "Product not found!"
+                message: "Artist not found!"
 /categories:
     
