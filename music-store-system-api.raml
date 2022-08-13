@@ -174,12 +174,12 @@ traits:
     body:
       application/json:
         type: ArtistDTO
-        examples: !include examples/post-.raml
+        examples: !include examples/post-artist.raml
     responses:
       201:
         body:
           application/json:
-            examples: !include examples/response-product.raml
+            examples: !include examples/response-artist.raml
   /{id}:
     get:
       displayName: GET a single artist
@@ -217,4 +217,62 @@ traits:
               examples:
                 message: Artist deleted
 /categories:
+  get:
+    is: [ paginated ]
+    displayName: GET all categories
+    description: Retrieves all artists from the database
+    responses:
+      200:
+        body:
+          application/json:
+            type: Artist[]
+            examples: !include examples/response-artists.raml
+  post:
+    displayName: SAVE an artist
+    description: Saves an artist to the database
+    body:
+      application/json:
+        type: ArtistDTO
+        examples: !include examples/post-artist.raml
+    responses:
+      201:
+        body:
+          application/json:
+            examples: !include examples/response-artist.raml
+  /{id}:
+    get:
+      displayName: GET a single artist
+      description: Retrieves a single artist from the database
+      responses:
+        200:
+          body:
+            application/json:
+              type: Artist
+              examples: !include examples/response-artist.raml
+        404:
+          body:
+            application/json:
+              example:
+                message: "Artist not found!"
+    put:
+      displayName: PUT an artist to database
+      description: Updates an artist in the database
+      body:
+        application/json:
+          type: ArtistDTO
+          examples: !include examples/post-artist.raml
+      responses:
+        200:
+          body:
+            application/json:
+              examples: !include examples/response-artist.raml
+    delete:
+      displayName: DELETE an artist
+      description: Removes an artist from the database
+      responses:
+        200:
+          body:
+            application/json:
+              examples:
+                message: Artist deleted
     
