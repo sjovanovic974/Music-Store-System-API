@@ -256,21 +256,21 @@ traits:
           body:
             application/json:
               example:
-                message: "Artist not found!"
+                message: "Category not found!"
     put:
-      displayName: PUT an artist to database
-      description: Updates an artist in the database
+      displayName: PUT a category to database
+      description: Updates a category in the database
       body:
         application/json:
-          type: ArtistDTO
-          examples: !include examples/post-artist.raml
+          type: CategorytDTO
+          examples: !include examples/post-category.raml
       responses:
         200:
           body:
             application/json:
-              examples: !include examples/response-artist.raml
+              examples: !include examples/response-category.raml
     delete:
-      displayName: DELETE an artist
+      displayName: DELETE an 
       description: Removes an artist from the database
       responses:
         200:
