@@ -96,7 +96,7 @@ traits:
               examples: !include examples/response-products.raml
   /category/{name}:
     get:
-      is: [ paginated, sorted]
+      is: [ client-id-required, paginated, sorted]
       displayName: GET products by category name
       description: Retrieves all products from a given category
       responses:
@@ -107,7 +107,7 @@ traits:
               examples: !include examples/response-products.raml
   /artist/{name}:
     get:
-      is: [ paginated, sorted ]
+      is: [ client-id-required, paginated, sorted ]
       displayName: GET products by artist name
       description: Retrieves all products for a given artist
       responses:
