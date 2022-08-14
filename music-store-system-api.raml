@@ -118,7 +118,7 @@ traits:
               examples: !include examples/response-products.raml
   /search/{query}:
     get:
-      is: [ paginated, sorted ]
+      is: [ client-id-required, paginated, sorted ]
       displayName: GET products by provided query
       description: Retrieves products containing search query in their respective product name field
       responses:
@@ -129,7 +129,7 @@ traits:
               examples: !include examples/response-products.raml
   /range:
     get:
-      is: [ paginated, sorted ]
+      is: [ client-id-required, paginated, sorted ]
       displayName: GET products between given price range
       description: Retrieves products between given price range
       queryParameters:
@@ -152,6 +152,7 @@ traits:
               type: Product[]
               examples: !include examples/response-products.raml
   post:
+    is: [client-id-required]
     displayName: POST a product to database
     description: Saves a single product to database
     body:
