@@ -31,6 +31,7 @@ types:
 traits:
   paginated: !include traits/pageable.raml
   sorted: !include traits/sortable.raml
+  client-id-required: !include traits/client-id-required.raml
 
 /products:
   is: [client-id-required]
