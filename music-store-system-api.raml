@@ -90,17 +90,17 @@ traits:
             application/json:
               type: Product[]
               examples: !include examples/response-products.raml
-  {name}:
-      get:
-        is: [ paginated, sorted]
-        displayName: GET products by category name
-        description: Retrieves all products from a given category
-        responses:
-          200:
-            body:
-              application/json:
-                type: Product[]
-                examples: !include examples/response-products.raml
+  /category/{name}:
+    get:
+      is: [ paginated, sorted]
+      displayName: GET products by category name
+      description: Retrieves all products from a given category
+      responses:
+        200:
+          body:
+            application/json:
+              type: Product[]
+              examples: !include examples/response-products.raml
   /artist/{name}:
     get:
       is: [ paginated, sorted ]
