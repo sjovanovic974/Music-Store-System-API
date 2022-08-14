@@ -35,7 +35,7 @@ traits:
 
 /products:
   get:
-    is: [ client- paginated, sorted ]
+    is: [ client-id-required, paginated, sorted ]
     displayName: GET all products
     description: Retrieves all products from database
     responses:
@@ -46,6 +46,7 @@ traits:
             examples: !include examples/response-products.raml
   /{id}:
     get:
+      is: [ client-id-required]
       displayName: GET a single product
       description: Retrieves a single product from database
       responses:
@@ -60,6 +61,7 @@ traits:
               example:
                 message: "Product not found!"
     put:
+      is: [ client-id-required]
       displayName: PUT a product to database
       description: Updates a product in the database
       body:
@@ -72,6 +74,7 @@ traits:
             application/json:
               examples: !include examples/response-product.raml
     delete:
+      is: [ client-id-required]
       displayName: DELETE a product
       description: Removes a product from the database
       responses:
@@ -82,7 +85,7 @@ traits:
                 message: Product deleted
   /category/{id}:
     get:
-      is: [ paginated, sorted]
+      is: [ client-id-required, paginated, sorted]
       displayName: GET products by category id
       description: Retrieves all products from a given category
       responses:
