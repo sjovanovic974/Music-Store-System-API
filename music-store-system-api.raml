@@ -33,7 +33,7 @@ traits:
   sorted: !include traits/sortable.raml
 
 /products:
-  is
+  is: [client-id-required]
   get:
     is: [ paginated, sorted ]
     displayName: GET all products
