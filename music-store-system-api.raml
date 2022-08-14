@@ -166,7 +166,7 @@ traits:
             examples: !include examples/response-product.raml
 /artists:
   get:
-    is: [ paginated ]
+    is: [ client-id-required, paginated ]
     displayName: GET all artists
     description: Retrieves all artists from the database
     responses:
@@ -176,6 +176,7 @@ traits:
             type: Artist[]
             examples: !include examples/response-artists.raml
   post:
+    is: [ client-id-required ]
     displayName: SAVE an artist
     description: Saves an artist to the database
     body:
@@ -189,6 +190,7 @@ traits:
             examples: !include examples/response-artist.raml
   /{id}:
     get:
+      is: [ client-id-required ]
       displayName: GET a single artist
       description: Retrieves a single artist from the database
       responses:
@@ -203,6 +205,7 @@ traits:
               example:
                 message: "Artist not found!"
     put:
+      is: [ client-id-required ]
       displayName: PUT an artist to database
       description: Updates an artist in the database
       body:
