@@ -34,9 +34,8 @@ traits:
   client-id-required: !include traits/client-id-required.raml
 
 /products:
-  is: [client-id-required]
   get:
-    is: [ paginated, sorted ]
+    is: [ client-id-required, paginated, sorted ]
     displayName: GET all products
     description: Retrieves all products from database
     responses:
