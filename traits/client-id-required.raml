@@ -1,4 +1,5 @@
 #%RAML 1.0 Trait
+client-id-required:
   headers:
     client_id:
       type: string
@@ -6,10 +7,6 @@
       type: string
   responses:
     401:
-      description: Unauthorized, The client_id or client_secret are not valid or the client does not have access.
-    429:
-      description: The client used all of its request quota for the current period.
+      description: Unauthorized or invalid client application credentials
     500:
-      description: An error occurred, see the specific message (Only if it is a WSDL endpoint).
-    503:
-      description: Contracts Information Unreachable.
+      description: Bad response from authorization server, or WSDL SOAP Fault error
